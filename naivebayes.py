@@ -123,7 +123,7 @@ def naiveBayes():
     print('\n')
     print(classification_report(val_data['useful'], val_prediction_useful))
 
-    joblib.dump((priorProb_useful, prob_likelihood_useful), 'naive_bayes_model_useful.joblib')
+    joblib.dump((train_features, priorProb_useful, prob_likelihood_useful), 'naive_bayes_model_useful.joblib')
 
     print('Funny\n')
     priorProb_funny = priorProbability(train_data['funny'])
@@ -134,7 +134,7 @@ def naiveBayes():
     print('\n')
     print(classification_report(val_data['funny'], val_prediction_funny))
 
-    joblib.dump((priorProb_funny, prob_likelihood_funny), 'naive_bayes_model_funny.joblib')
+    joblib.dump((train_features, priorProb_funny, prob_likelihood_funny), 'naive_bayes_model_funny.joblib')
 
     print('Cool\n')
     priorProb_cool = priorProbability(train_data['cool'])
@@ -145,7 +145,7 @@ def naiveBayes():
     print('\n')
     print(classification_report(val_data['cool'], val_prediction_cool))
 
-    joblib.dump((priorProb_cool, prob_likelihood_cool), 'naive_bayes_model_cool.joblib')
+    joblib.dump((train_features, priorProb_cool, prob_likelihood_cool), 'naive_bayes_model_cool.joblib')
 
 naiveBayes()
 
